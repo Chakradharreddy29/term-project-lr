@@ -2,10 +2,12 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-# Load the trained model
-with open('lr_model.pkl', 'rb') as file:
-    lr_model = pickle.load(file)
-
+try:
+    with open('lr_model.pkl', 'rb') as file:
+        lr_model = pickle.load(file)
+    st.write("Model loaded successfully!")
+except Exception as e:
+    st.error(f"An error occurred while loading the model: {e}")
 # Define the Streamlit app
 st.title("EV Charging Efficiency Predictor")
 
