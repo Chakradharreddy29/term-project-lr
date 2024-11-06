@@ -1,7 +1,14 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import os
+import subprocess
 
+try:
+    import sklearn
+except ImportError:
+    subprocess.check_call(["pip", "install", "scikit-learn"])
+    import sklearn  
 try:
     with open('lr_model.pkl', 'rb') as file:
         lr_model = pickle.load(file)
