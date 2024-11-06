@@ -16,7 +16,7 @@ Select the appropriate model and input the data to get predictions.
 """)
 
 # Model selection dropdown
-model_name = st.selectbox('Choose Model', ['lr_model', 'dtr_model', 'rfr_model'])
+model_name = st.selectbox('Choose Model', ['lr_model', 'dtr_model']) # 'rfr_model'])
 
 # Define the feature labels based on the selected model
 if model_name == 'lr_model': 
